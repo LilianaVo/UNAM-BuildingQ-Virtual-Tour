@@ -437,7 +437,7 @@ int main() {
 		"resources/skybox/left.jpg",
 		"resources/skybox/top.jpg",
 		"resources/skybox/bottom.jpg",
-		"resources/skybox/cu_front.jpg",
+		"resources/skybox/front.jpg",
 		"resources/skybox/back.jpg"
 	};
 
