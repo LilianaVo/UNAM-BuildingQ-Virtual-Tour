@@ -1,11 +1,11 @@
 /*---------------------------------------------------------*/
 /* ----------------   Proyecto Final   --------------------*/
 /*-----------------       2025-2       --------------------*/
-/*------------- Alumno: Adolfo Román Jiménez --------------*/
+/*------------- Alumno: Adolfo Romï¿½n Jimï¿½nez --------------*/
 /*------------- No. Cuenta: 410098363 ---------------------*/
-/*------------- Alumno: Ileana Verónica Lee Obando --------*/
+/*------------- Alumno: Ileana Verï¿½nica Lee Obando --------*/
 /*------------- No. Cuenta: 318118408 ---------------------*/
-/*------------- Alumno: Alicia Aislinn González Nava ------*/
+/*------------- Alumno: Alicia Aislinn Gonzï¿½lez Nava ------*/
 /*------------- No. Cuenta: 317251357 ---------------------*/
 /*---------------------------------------------------------*/
 
@@ -62,8 +62,8 @@ lastFrame = 0.0f;
 
 void getResolution(void);
 void myData(void);							// De la practica 4
-void LoadTextures(void);					// De la práctica 6
-unsigned int generateTextures(char*, bool, bool);	// De la práctica 6
+void LoadTextures(void);					// De la prï¿½ctica 6
+unsigned int generateTextures(char*, bool, bool);	// De la prï¿½ctica 6
 
 //For Keyboard
 float	movX = 0.0f,
@@ -99,7 +99,7 @@ recorrido3 = false,
 recorrido4 = false;
 
 
-//Keyframes (Manipulación y dibujo)
+//Keyframes (Manipulaciï¿½n y dibujo)
 float	posX = 0.0f,
 		posY = 0.0f,
 		posZ = 0.0f,
@@ -126,7 +126,7 @@ typedef struct _frame
 }FRAME;
 
 FRAME KeyFrame[MAX_FRAMES];
-int FrameIndex = 0;			//introducir número en caso de tener Key guardados
+int FrameIndex = 0;			//introducir nï¿½mero en caso de tener Key guardados
 bool play = false;
 int playIndex = 0;
 
@@ -247,7 +247,7 @@ void animate(void)
 		}
 	}
 
-	//Vehículo
+	//Vehï¿½culo
 	if (animacion)
 	{
 		movAuto_x += 3.0f;
@@ -464,7 +464,7 @@ int main() {
 	// Modelos Alicia
 	// -------------------------------------------------------------------------------------------------------------------------
 
-	//Inicialización de KeyFrames
+	//Inicializaciï¿½n de KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = 0;
@@ -650,7 +650,7 @@ int main() {
 
 		//Tener Piso como referencia
 		glBindVertexArray(VAO[2]);
-		//Colocar código aquí
+		//Colocar cï¿½digo aquï¿½
 		modelOp = glm::scale(glm::mat4(1.0f), glm::vec3(40.0f, 2.0f, 40.0f));
 		modelOp = glm::translate(modelOp, glm::vec3(0.0f, -1.0f, 0.0f));
 		modelOp = glm::rotate(modelOp, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
@@ -660,7 +660,7 @@ int main() {
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		glBindVertexArray(VAO[0]);
-		//Colocar código aquí
+		//Colocar cï¿½digo aquï¿½
 		/*modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 10.0f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 1.0f));
 		myShader.setMat4("model", modelOp);
