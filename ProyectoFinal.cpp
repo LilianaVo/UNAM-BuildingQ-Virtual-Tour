@@ -76,7 +76,7 @@ unsigned int	t_smile,
 t_toalla,
 t_unam,
 t_white,
-t_floor,
+t_grass,
 t_ladrillos;
 
 //Lighting
@@ -207,7 +207,7 @@ unsigned int generateTextures(const char* filename, bool alfa, bool isPrimitive)
 
 void LoadTextures()
 {
-	t_floor = generateTextures("Texturas/floor.png", 0, true);
+	t_grass = generateTextures("Texturas/grass.jpg", 0, true);
 	//This must be the last
 	t_white = generateTextures("Texturas/white.jpg", 0, false);
 }
@@ -433,12 +433,12 @@ int main() {
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.fs");	//To use with animated models 
 	
 	vector<std::string> faces{
-		"resources/skybox/right.jpg",
-		"resources/skybox/left.jpg",
-		"resources/skybox/top.jpg",
-		"resources/skybox/bottom.jpg",
-		"resources/skybox/front.jpg",
-		"resources/skybox/back.jpg"
+		"resources/skybox/right_6.jpg",
+		"resources/skybox/left_6.jpg",
+		"resources/skybox/top_6.jpg",
+		"resources/skybox/bottom_6.jpg",
+		"resources/skybox/front_6.jpg",
+		"resources/skybox/back_6.jpg"
 	};
 
 	Skybox skybox = Skybox(faces);
@@ -450,7 +450,7 @@ int main() {
 
 	// load models
 	// -----------
-	Model piso("resources/objects/piso/piso.obj");
+	//Model piso("resources/objects/piso/piso.obj");
 
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Adolfo
@@ -560,52 +560,6 @@ int main() {
 		myShader.setMat4("projection", projectionOp);
 		/**********/
 
-		//Model
-
-		//Building render
-		glBindVertexArray(VAO[1]);
-
-		float tx, ty, tz, sx, sy, sz, r, g, b;
-
-		float points[16][9] =
-		{//   tx     ty     tz    sx     sy     sz     r     g     b
-			{-18.0f, 54.0f, 0.0f, 4.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 1
-			{ 18.0f, 54.0f, 0.0f, 4.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 2
-			{-54.0f, 54.0f, 0.0f, 4.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 3
-			{ 54.0f, 54.0f, 0.0f, 4.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 4
-			{  0.0f, 28.0f, 0.0f, 32.0f,   8.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //
-			{  0.0f, 52.0f, 0.0f, 32.0f,   8.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{  0.0f, 78.0f, 0.0f, 32.0f,   12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{  0.0f,102.0f, 0.0f, 32.0f,   12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{-36.0f, 28.0f, 0.0f, 32.0f,   8.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //
-			{-36.0f, 52.0f, 0.0f, 32.0f,   8.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{-36.0f, 78.0f, 0.0f, 32.0f,   12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{-36.0f,102.0f, 0.0f, 32.0f,   12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{ 36.0f, 28.0f, 0.0f, 32.0f,   8.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //
-			{ 36.0f, 52.0f, 0.0f, 32.0f,   8.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{ 36.0f, 78.0f, 0.0f, 32.0f,   12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{ 36.0f,102.0f, 0.0f, 32.0f,   12.0f, 4.0f, 0.0f, 0.0f, 0.0f}
-		};
-
-		for (int i = 0; i < 16; i++)
-		{
-			tx = points[i][0];
-			ty = points[i][1];
-			tz = points[i][2];
-			sx = points[i][3];
-			sy = points[i][4];
-			sz = points[i][5];
-			r = points[i][6];
-			g = points[i][7];
-			b = points[i][8];
-
-			modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(tx, ty, tz));
-			modelOp = glm::scale(modelOp, glm::vec3(sx, sy, sz));
-			myShader.setMat4("model", modelOp);
-			myShader.setVec3("aColor", glm::vec3(r, g, b));
-			glDrawArrays(GL_TRIANGLES, 0, 36);
-		}
-
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion
@@ -645,12 +599,12 @@ int main() {
 		//Tener Piso como referencia
 		glBindVertexArray(VAO[2]);
 		//Colocar código aquí
-		modelOp = glm::scale(glm::mat4(1.0f), glm::vec3(40.0f, 0.0f, 40.0f));
+		modelOp = glm::scale(glm::mat4(1.0f), glm::vec3(40.0f, 2.0f, 40.0f));
 		modelOp = glm::translate(modelOp, glm::vec3(0.0f, -1.0f, 0.0f));
 		modelOp = glm::rotate(modelOp, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		myShader.setMat4("model", modelOp);
 		myShader.setVec3("aColor", 1.0f, 1.0f, 1.0f);
-		glBindTexture(GL_TEXTURE_2D, t_floor);
+		glBindTexture(GL_TEXTURE_2D, t_grass);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		glBindVertexArray(VAO[0]);
