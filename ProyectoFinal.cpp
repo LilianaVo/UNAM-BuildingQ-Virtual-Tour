@@ -10,7 +10,6 @@
 /*---------------------------------------------------------*/
 
 #include <Windows.h>
-
 #include <glad/glad.h>
 #include <glfw3.h>						//main
 #include <stdlib.h>		
@@ -20,10 +19,8 @@
 #include <time.h>
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>					//Texture
-
 #define SDL_MAIN_HANDLED
 #include <SDL3/SDL.h>
-
 #include <shader_m.h>
 #include <camera.h>
 #include <modelAnim.h>
@@ -31,8 +28,6 @@
 #include <Skybox.h>
 #include <iostream>
 #include <mmsystem.h>
-
-
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -97,7 +92,6 @@ recorrido1 = true,
 recorrido2 = false,
 recorrido3 = false,
 recorrido4 = false;
-
 
 //Keyframes (Manipulaci�n y dibujo)
 float	posX = 0.0f,
@@ -567,11 +561,11 @@ int main() {
 
 		float tx, ty, tz, sx, sy, sz, r, g, b;
 
-		float points[22][9] =
+		float points[32][9] =
 		{//   tx     ty     tz    sx     sy     sz     r     g     b
 			{-18.0f, 54.0f, 0.0f,  4.0f,108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 1
 			{ 18.0f, 54.0f, 0.0f,  4.0f,108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 2
-			{-58.0f, 54.0f, 0.0f, 12.0f,108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 3
+			{-56.0f, 54.0f, 0.0f,  8.0f,108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 3
 			{ 54.0f, 54.0f, 0.0f,  4.0f,108.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //Columna fachada frontal 4
 			{  0.0f, 28.0f, 0.0f, 32.0f,  8.0f, 4.0f, 0.0f, 0.0f, 0.0f}, //
 			{  0.0f, 52.0f, 0.0f, 32.0f,  8.0f, 4.0f, 0.0f, 0.0f, 0.0f},
@@ -586,15 +580,29 @@ int main() {
 			{ 36.0f, 78.0f, 0.0f, 32.0f, 12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
 			{ 36.0f,102.0f, 0.0f, 32.0f, 12.0f, 4.0f, 0.0f, 0.0f, 0.0f},
 			//
-			{-58.0f,54.0f, -34.0f, 12.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{-88.0f,54.0f, -68.0f, 72.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f},
-			{-62.0f, 4.0f, -17.0f,  4.0f,   8.0f,30.0f, 0.467f, 0.467f, 0.486f},
-			{-62.0f, 4.0f, -51.0f,  4.0f,   8.0f,30.0f, 0.467f, 0.467f, 0.486f},
-			{-54.0f, 26.0f, -17.0f,  4.0f,  12.0f,30.0f, 0.467f, 0.467f, 0.486f},
-			{-54.0f, 26.0f, -51.0f,  4.0f,  12.0f,30.0f, 0.467f, 0.467f, 0.486f},
+			{-56.0f, 54.0f, -34.0f,  8.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f},
+			{-88.0f, 54.0f, -68.0f, 72.0f, 108.0f, 4.0f, 0.0f, 0.0f, 0.0f},
+
+			{-58.0f,  4.0f, -17.0f,  4.0f,   8.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-58.0f,  4.0f, -51.0f,  4.0f,   8.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 26.0f, -17.0f,  4.0f,  12.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 26.0f, -51.0f,  4.0f,  12.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-58.0f, 36.0f, -17.0f,  4.0f,   8.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-58.0f, 36.0f, -51.0f,  4.0f,   8.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 58.0f, -17.0f,  4.0f,  12.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 58.0f, -51.0f,  4.0f,  12.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-58.0f, 68.0f, -17.0f,  4.0f,   8.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-58.0f, 68.0f, -51.0f,  4.0f,   8.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 90.0f, -17.0f,  4.0f,  12.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 90.0f, -51.0f,  4.0f,  12.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 99.0f, -17.0f,  4.0f,  18.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			{-54.0f, 99.0f, -51.0f,  4.0f,  18.0f,30.0f, 0.502f, 0.502f, 0.502f},
+			//
+
+
 		};
 
-		for (int i = 0; i < 22; i++)
+		for (int i = 0; i < 32; i++)
 		{
 			tx = points[i][0];
 			ty = points[i][1];
