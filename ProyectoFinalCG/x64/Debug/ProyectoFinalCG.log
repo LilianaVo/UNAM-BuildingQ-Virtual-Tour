@@ -1,0 +1,26 @@
+﻿  ProyectoFinal.cpp
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\shader_m.h(44,40): warning C4101: 'e': unreferenced local variable
+  (compiling source file 'ProyectoFinal.cpp')
+  
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\mesh.h(88,50): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  (compiling source file 'ProyectoFinal.cpp')
+  
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\meshAnim.h(116,50): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  (compiling source file 'ProyectoFinal.cpp')
+  
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\modelAnim.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'ProyectoFinal.cpp')
+  
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\modelAnim.h(520,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'ProyectoFinal.cpp')
+  
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(485,27): warning C4244: '=': conversion from 'Uint64' to 'double', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(936,11): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(937,11): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(944,10): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(945,10): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(947,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(947,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(952,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  ProyectoFinalCG.vcxproj -> C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\x64\Debug\ProyectoFinalCG.exe
