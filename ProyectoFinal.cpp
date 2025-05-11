@@ -72,7 +72,7 @@ movZ = -5.0f,
 rotX = 0.0f;
 
 //Texture
-unsigned int	t_smile,
+unsigned int	t_concrete,
 t_toalla,
 t_unam,
 t_white,
@@ -207,6 +207,7 @@ unsigned int generateTextures(const char* filename, bool alfa, bool isPrimitive)
 void LoadTextures()
 {
 	t_grass = generateTextures("Texturas/grass.jpg", 0, true);
+	t_concrete = generateTextures("Texturas/concrete.jpg", 0, true);
 	//This must be the last
 	t_white = generateTextures("Texturas/white.jpg", 0, false);
 }
@@ -722,8 +723,6 @@ int main() {
 			//
 			{-34.0f, 12.0f, 68.0f,  36.0f,  24.0f,4.0f, 0.502f, 0.502f, 0.502f },
 			{ 34.0f, 12.0f, 68.0f,  36.0f,  24.0f,4.0f, 0.502f, 0.502f, 0.502f },
-			
-
 		};
 
 		for (int i = 0; i < 124; i++)
@@ -742,6 +741,7 @@ int main() {
 			modelOp = glm::scale(modelOp, glm::vec3(sx, sy, sz));
 			myShader.setMat4("model", modelOp);
 			myShader.setVec3("aColor", glm::vec3(r, g, b));
+			glBindTexture(GL_TEXTURE_2D, t_concrete);
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 
