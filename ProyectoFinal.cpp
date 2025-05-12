@@ -520,7 +520,7 @@ int main() {
 	// Modelos Ileana
 	// -------------------------------------------------------------------------------------------------------------------------
 
-		//Estaticos arboles y plantas
+	//Estaticos arboles y plantas
 	Model Arbol1("resources/objects/OakTree/Oak_Tree.obj"); //1 
 	Model Planta1("resources/objects/SugarCane/Sugar_Cane.obj"); //2
 	Model Planta2("resources/objects/Fern/Fern1.obj"); //3
@@ -549,6 +549,14 @@ int main() {
 	//Muebles de ambiente
 
 	Model Estatua1("resources/objects/Statue/Statue1.obj"); //25
+	Model Pared1("resources/objects/White1/White1.obj"); //26 
+	Model Puerta1("resources/objects/Door1/Door1.obj"); //27 
+	Model Puerta2("resources/objects/Door2/Door2.obj"); //28 
+	Model Puerta3("resources/objects/Door3/Door3.obj"); //29 
+	Model Puerta4("resources/objects/Door4/Door4.obj"); //30
+	Model Cristal1("resources/objects/Crystal/Crystal1.obj"); //31 
+	Model Cristal2("resources/objects/Crystal2/Crystal2.obj"); //32 
+	Model Cristal3("resources/objects/Crystal3/Crystal3.obj"); //33 
 
 
 	// -------------------------------------------------------------------------------------------------------------------------
