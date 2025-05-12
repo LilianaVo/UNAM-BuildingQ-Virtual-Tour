@@ -14,7 +14,6 @@ C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\modelAnim.h(104,44): warni
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\modelAnim.h(520,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'ProyectoFinal.cpp')
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(83,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(565,19): warning C4305: '+=': truncation from 'double' to 'float'
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(566,20): warning C4305: '+=': truncation from 'double' to 'float'
@@ -26,28 +25,4 @@ C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1198,10): warnin
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1200,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1200,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1205,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1212,23): error C2039: 'filesystem': is not a member of 'std'
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\map(24,1):
-      see declaration of 'std'
-  
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1212,23): error C2878: 'filesystem': a namespace or class of this name does not exist
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1215,8): error C2653: 'fs': is not a class or namespace name
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1215,12): error C3861: 'exists': identifier not found
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1220,28): error C2653: 'fs': is not a class or namespace name
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1220,20): error C2530: 'entry': references must be initialized
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1220,20): error C3531: 'entry': a symbol whose type contains 'auto' must have an initializer
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1220,26): error C2143: syntax error: missing ';' before ':'
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1220,32): error C3861: 'directory_iterator': identifier not found
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1220,62): error C2143: syntax error: missing ';' before ')'
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1231,20): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1231,32): error C2039: 'filesystem_error': is not a member of 'std'
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\map(24,1):
-      see declaration of 'std'
-  
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1231,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1231,48): error C2143: syntax error: missing ',' before '&'
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1232,40): error C2065: 'e': undeclared identifier
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1238,1): error C2059: syntax error: '}'
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1238,1): error C2143: syntax error: missing ';' before '}'
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1241,17): error C2143: syntax error: missing ';' before '{'
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1241,17): error C2447: '{': missing function header (old-style formal list?)
+  ProyectoFinalCG.vcxproj -> C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\x64\Debug\ProyectoFinalCG.exe
