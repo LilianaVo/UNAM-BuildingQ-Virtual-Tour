@@ -964,419 +964,416 @@ int main() {
 		// Personaje Animacion y Estaticos Ileana
 		// -------------------------------------------------------------------------------------------------------------------------
 
-		//Estaticos ambiente - Arboles, Plantas y Bardas
-
-//Decoración: Parte izquierda del edificio
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -50.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.08f));
-staticShader.setMat4("model", modelOp);
-Arbol1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -90.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.08f));
-staticShader.setMat4("model", modelOp);
-Arbol1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -125.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.08f));
-staticShader.setMat4("model", modelOp);
-Arbol1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(70.0f, -1.9f, -150.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.08f));
-staticShader.setMat4("model", modelOp);
-Arbol1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.5f, 6.0f, -150.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(63.5f, 6.0f, -150.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(86.5f, 6.0f, -150.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(109.5f, 6.0f, -150.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(132.5f, 6.0f, -150.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.5f, 6.0f, -158.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.5f, 6.0f, -181.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.5f, 6.0f, -204.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Barda2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -133.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -123.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -113.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -103.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -93.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -83.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -73.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -63.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -53.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -43.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -33.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -23.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -23.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -83.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -73.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -63.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -53.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -43.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -33.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta6.Draw(staticShader);
-
-//Plantas de decoracion
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -15.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.20f));
-staticShader.setMat4("model", modelOp);
-Planta1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.15f));
-staticShader.setMat4("model", modelOp);
-Planta2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -26.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Planta3.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -20.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.80f));
-staticShader.setMat4("model", modelOp);
-Planta4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -31.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.65f));
-staticShader.setMat4("model", modelOp);
-Planta4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(45.0f, -1.9f, -35.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.15f));
-staticShader.setMat4("model", modelOp);
-Planta2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(29.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.65f));
-staticShader.setMat4("model", modelOp);
-Planta4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(35.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Planta1.Draw(staticShader);
-
-//Decoración: Parte derecha del edificio
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-57.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-67.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-77.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-87.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-97.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-107.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-117.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-127.0f, -1.9f, -87.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.05f));
-staticShader.setMat4("model", modelOp);
-Planta5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-77.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.08f));
-staticShader.setMat4("model", modelOp);
-Arbol1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-107.0f, -1.9f, -70.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.08f));
-staticShader.setMat4("model", modelOp);
-Arbol1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-57.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-67.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-77.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-87.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-97.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-107.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-117.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-127.0f, -1.9f, -76.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, -62.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.07f));
-staticShader.setMat4("model", modelOp);
-Estatua1.Draw(staticShader);
-
-//Plantas de decoracion
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -15.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.20f));
-staticShader.setMat4("model", modelOp);
-Planta1.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.15f));
-staticShader.setMat4("model", modelOp);
-Planta2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -26.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Planta3.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -20.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.80f));
-staticShader.setMat4("model", modelOp);
-Planta4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -31.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.65f));
-staticShader.setMat4("model", modelOp);
-Planta4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -35.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.15f));
-staticShader.setMat4("model", modelOp);
-Planta2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-29.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.65f));
-staticShader.setMat4("model", modelOp);
-Planta4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-35.0f, -1.9f, -13.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Planta1.Draw(staticShader);
-
-//Muebles de ambiente
-
-//Bancos Izquierda
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -70.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco3.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -108.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco3.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, -70.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, -1.9f, -80.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, -80.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco6.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, -95.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco5.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 3.0f, -85.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Suelo2.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 4.0f, -85.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.09f));
-staticShader.setMat4("model", modelOp);
-Arbol2.Draw(staticShader);
-
-//Bancos Derecha
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -50.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco4.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -63.5f));
-modelOp = glm::scale(modelOp, glm::vec3(0.06f));
-staticShader.setMat4("model", modelOp);
-Planta11.Draw(staticShader);
-
-modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -75.0f));
-modelOp = glm::scale(modelOp, glm::vec3(0.10f));
-staticShader.setMat4("model", modelOp);
-Banco4.Draw(staticShader);
-
-
-		//Edificios
+		//Estaticos, Decoración: Parte izquierda del edificio
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Arbol1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -90.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Arbol1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -125.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Arbol1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(70.0f, -1.9f, -150.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Arbol1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.5f, 6.0f, -150.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(63.5f, 6.0f, -150.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(86.5f, 6.0f, -150.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(109.5f, 6.0f, -150.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(132.5f, 6.0f, -150.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.5f, 6.0f, -158.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.5f, 6.0f, -181.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.5f, 6.0f, -204.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Barda2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -133.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -123.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -113.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -103.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -93.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -83.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -73.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -63.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -53.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -43.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -33.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -23.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -23.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -83.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -73.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -63.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -53.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -43.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, -33.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta6.Draw(staticShader);
+
+		//Plantas de decoracion
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -15.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.20f));
+		staticShader.setMat4("model", modelOp);
+		Planta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Planta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -26.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Planta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -20.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.80f));
+		staticShader.setMat4("model", modelOp);
+		Planta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -31.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.65f));
+		staticShader.setMat4("model", modelOp);
+		Planta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(45.0f, -1.9f, -35.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Planta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(29.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.65f));
+		staticShader.setMat4("model", modelOp);
+		Planta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(35.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Planta1.Draw(staticShader);
+
+		//Decoración: Parte derecha del edificio
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-57.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-67.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-77.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-87.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-97.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-107.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-117.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-127.0f, -1.9f, -87.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.05f));
+		staticShader.setMat4("model", modelOp);
+		Planta5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-77.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Arbol1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-107.0f, -1.9f, -70.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Arbol1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-57.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-67.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-77.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-87.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-97.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-107.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-117.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-127.0f, -1.9f, -76.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, -62.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
+		staticShader.setMat4("model", modelOp);
+		Estatua1.Draw(staticShader);
+
+		//Plantas de decoracion
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -15.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.20f));
+		staticShader.setMat4("model", modelOp);
+		Planta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Planta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -26.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Planta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -20.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.80f));
+		staticShader.setMat4("model", modelOp);
+		Planta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -31.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.65f));
+		staticShader.setMat4("model", modelOp);
+		Planta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -35.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Planta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-29.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.65f));
+		staticShader.setMat4("model", modelOp);
+		Planta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-35.0f, -1.9f, -13.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Planta1.Draw(staticShader);
+
+		//Muebles de ambiente
+
+		//Bancos Izquierda
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -70.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -108.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, -70.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, -1.9f, -80.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, -80.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco6.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, -95.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco5.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 3.0f, -85.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Suelo2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 4.0f, -85.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
+		staticShader.setMat4("model", modelOp);
+		Arbol2.Draw(staticShader);
+
+		//Bancos Derecha
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -63.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.06f));
+		staticShader.setMat4("model", modelOp);
+		Planta11.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-45.0f, -1.9f, -75.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Banco4.Draw(staticShader);
+
+				//Edificios
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -190.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
@@ -1517,6 +1514,425 @@ Banco4.Draw(staticShader);
 		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
 		staticShader.setMat4("model", modelOp);
 		Suelo2.Draw(staticShader);
+		
+		//Relleno de espacios ventanas FRENTE
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-10.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-25.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-35.0, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-35.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-42.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(25.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(35.0, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(42.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		//Limitado del salon de amarillo
+
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-60.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-85.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-110.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		//Limitado el salon
+
+		//ATRAS
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-60.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-30.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-20.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-10.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(20.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta1.Draw(staticShader);
+
+		//Lado derecho
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 10.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 20.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 30.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 40.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, 60.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta3.Draw(staticShader);
+
+		//Lado Izquierdo
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 60.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 10.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 20.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 30.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 40.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta4.Draw(staticShader);
+
+		//ADELANTE
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-35.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-60.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-85.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-10.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(15.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(65.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(90.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(115.0f, -1.9f, 5.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal1.Draw(staticShader);
+
+		//
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -50.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -60.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -40.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -50.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		//Relleno de espacios ventanas Edificios de lado derecho
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -17.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -7.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -17.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -30.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		//
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -50.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -60.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -40.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-55.0f, -1.9f, -50.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		//Relleno de espacios ventanas Edificios de lado izquierdo
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(52.0f, -1.9f, -17.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -7.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -17.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -30.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		//
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(52.0f, -1.9f, -50.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -60.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -40.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -50.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(52.0f, -1.9f, -83.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -98.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -70.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -83.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		//
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(52.0f, -1.9f, -116.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.17f));
+		staticShader.setMat4("model", modelOp);
+		Cristal3.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -126.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -96.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(55.0f, -1.9f, -116.5f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Puerta2.Draw(staticShader);
+
+
 
 
 		// -------------------------------------------------------------------------------------------------------------------------
