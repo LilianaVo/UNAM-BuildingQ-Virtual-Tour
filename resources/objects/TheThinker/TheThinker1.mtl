@@ -1,0 +1,18 @@
+# 3ds Max Wavefront OBJ Exporter v0.99 - (c)2007 guruware
+# File Created: 11.05.2025 19:42:52
+
+newmtl blinn1SG
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.3700 0.3700 0.3700
+	Ke 0.0000 0.0000 0.0000
+	map_Ka TheThinker_Diffuse.jpg
+	map_Kd TheThinker_Diffuse.jpg
+	map_bump TheThinker_Bump.jpg
+	bump TheThinker_Bump.jpg
