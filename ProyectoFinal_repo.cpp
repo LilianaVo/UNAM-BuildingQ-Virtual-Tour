@@ -53,7 +53,7 @@ void setCameraCiscoView();
 void setCameraIsoView();
 
 //sonido
-//namespace fs = std::filesystem;
+namespace fs = std::filesystem;
 std::vector<std::string> playlist;
 int currentIndex = 0;
 ISoundEngine* engine = createIrrKlangDevice();
@@ -257,7 +257,7 @@ void LoadTextures()
 	t_cisco_f = generateTextures("Texturas/cisco_f.jpg", 0, true);
 	t_cisco_l = generateTextures("Texturas/cisco_l.jpg", 0, true);
 	t_cisco_r = generateTextures("Texturas/cisco_r.jpg", 0, true);
-	pared_cisco = generateTextures("Texturas / cisco.png", 0, true);
+	pared_cisco = generateTextures("Texturas/cisco.png", 0, true);
 	t_grass = generateTextures("Texturas/grass.jpg", 0, true);
 	t_concrete = generateTextures("Texturas/concrete.jpg", 0, true);
 	//This must be the last
@@ -1208,33 +1208,11 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
 
 //Carga los archivos .ogg y .mp3 de la carpeta
 void loadPlaylist(const std::string& folderPath) {
-	try {
-		namespace fs = std::filesystem; // Using std::filesystem
-
-		// Check if directory exists
-		if (!fs::exists(folderPath)) {
-			std::cerr << "Error: Directory does not exist - " << folderPath << std::endl;
-			return;
-		}
-
-		for (const auto& entry : fs::directory_iterator(folderPath)) {
-			// Convert extension to lowercase for case-insensitive comparison
-			std::string ext = entry.path().extension().string();
-			std::transform(ext.begin(), ext.end(), ext.begin(),
-				[](unsigned char c) { return std::tolower(c); });
-
-			if (ext == ".ogg" || ext == ".mp3") {
-				playlist.push_back(entry.path().string());
-			}
+	for (const auto& entry : std::filesystem::directory_iterator(folderPath)) {
+		if (entry.path().extension() == ".ogg" || entry.path().extension() == ".mp3") {
+			playlist.push_back(entry.path().string());
 		}
 	}
-	catch (const std::filesystem::filesystem_error& e) {
-		std::cerr << "Filesystem error: " << e.what() << std::endl;
-	}
-	catch (...) {
-		std::cerr << "Unknown error occurred while loading playlist" << std::endl;
-	}
-}
 }
 
 //Reproduce el siguiente de la playlist
