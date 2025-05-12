@@ -554,10 +554,7 @@ int main() {
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Alicia
 	// -------------------------------------------------------------------------------------------------------------------------
-	Model arbol("resources/objects/arbol/candytree.obj");
 	Model pajaro("resources/objects/pajaro/bird.dae");
-	Model raton("resources/objects/raton/mr721_09.dae");
-	Model extinguidor("resources/objects/extinguidor/ROBJ_Extinguisher.dae");
 	Model sol("resources/objects/sol/sol.obj");
 	Model estatua("resources/objects/estatua/estatua.obj");
 	Model ala_der("resources/objects/pajaro/ala_der.obj");
