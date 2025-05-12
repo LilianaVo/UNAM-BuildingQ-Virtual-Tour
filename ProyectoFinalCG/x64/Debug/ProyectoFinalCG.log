@@ -14,12 +14,12 @@ C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\modelAnim.h(104,44): warni
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\include\modelAnim.h(520,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'ProyectoFinal.cpp')
   
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(504,27): warning C4244: '=': conversion from 'Uint64' to 'double', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(961,11): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(962,11): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(969,10): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(970,10): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(972,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(972,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(977,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(523,27): warning C4244: '=': conversion from 'Uint64' to 'double', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1014,11): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1015,11): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1022,10): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1023,10): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1025,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1025,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1030,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   ProyectoFinalCG.vcxproj -> C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\x64\Debug\ProyectoFinalCG.exe
