@@ -22,4 +22,5 @@ C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1023,10): warnin
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1025,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1025,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\ProyectoFinal.cpp(1030,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   ProyectoFinalCG.vcxproj -> C:\Users\Adolf\Desktop\FI\LCG\ProyectoFinalCG\x64\Debug\ProyectoFinalCG.exe
