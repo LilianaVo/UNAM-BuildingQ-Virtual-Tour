@@ -959,34 +959,6 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		//piso.Draw(staticShader);
 
-		//árbol
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(60.0f, -13.0f, -150.0));
-		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
-		staticShader.setMat4("model", modelOp);
-		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
-		arbol.Draw(staticShader);
-
-		//árbol
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-20.0f, -13.0f, -170.0));
-		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
-		staticShader.setMat4("model", modelOp);
-		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
-		arbol.Draw(staticShader);
-
-		//árbol
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, -13.0f, -120.0));
-		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
-		staticShader.setMat4("model", modelOp);
-		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
-		arbol.Draw(staticShader);
-
-		//árbol
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -13.0f, -100.0));
-		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
-		staticShader.setMat4("model", modelOp);
-		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
-		arbol.Draw(staticShader);
-
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion y Estaticos Adolfo
 		// -------------------------------------------------------------------------------------------------------------------------
