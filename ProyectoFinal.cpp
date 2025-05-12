@@ -1,11 +1,11 @@
 /*---------------------------------------------------------*/
 /* ----------------   Proyecto Final   --------------------*/
 /*-----------------       2025-2       --------------------*/
-/*------------- Alumno: Adolfo Rom�n Jim�nez --------------*/
+/*------------- Alumno: Adolfo Rom n Jim nez --------------*/
 /*------------- No. Cuenta: 410098363 ---------------------*/
-/*------------- Alumno: Ileana Ver�nica Lee Obando --------*/
+/*------------- Alumno: Ileana Ver nica Lee Obando --------*/
 /*------------- No. Cuenta: 318118408 ---------------------*/
-/*------------- Alumno: Alicia Aislinn Gonz�lez Nava ------*/
+/*------------- Alumno: Alicia Aislinn Gonz lez Nava ------*/
 /*------------- No. Cuenta: 317251357 ---------------------*/
 /*---------------------------------------------------------*/
 
@@ -28,17 +28,36 @@
 #include <Skybox.h>
 #include <iostream>
 #include <mmsystem.h>
-
 #include<irrKlang.h>
+#include <filesystem>
+#include <vector>
+#include <string>
+
 using namespace irrklang;
 
 #pragma comment(lib, "irrKlang.lib")
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void my_input(GLFWwindow* window, int key, int scancode, int action, int mods);
 void animate(void);
+
+void loadPlaylist(const std::string& folderPath);
+void playNext();
+void updateAudio();
+void setCameraFrontView();
+void setCameraLabView();
+void setCameraCiscoView();
+void setCameraIsoView();
+
+//sonido
+//namespace fs = std::filesystem;
+std::vector<std::string> playlist;
+int currentIndex = 0;
+ISoundEngine* engine = createIrrKlangDevice();
+ISound* currentSound = nullptr;
 
 // settings
 unsigned int SCR_WIDTH = 800;
@@ -48,10 +67,10 @@ GLFWmonitor* monitors;
 GLuint VBO[3], VAO[3], EBO[3];
 
 //Camera
-Camera camera(glm::vec3(0.0f, 10.0f, 3.0f));
+Camera camera(glm::vec3(-10.0f, 7.0f, -100.0));
 float MovementSpeed = 0.1f;
 GLfloat lastX = SCR_WIDTH / 2.0f,
-		lastY = SCR_HEIGHT / 2.0f;
+lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
 
 //Timing
@@ -59,11 +78,20 @@ const int FPS = 60;
 const int LOOP_TIME = 1000 / FPS; // = 16 milisec // 1000 millisec == 1 sec
 double	deltaTime = 0.0f,
 lastFrame = 0.0f;
+float contador_sol, contador_paja;
+float angulo_ala = sin((contador_paja) * 30.0f);
+float c_time = glfwGetTime();
+
+float ampRot = 30.0f;
+float freqRot = 2.0f;
+float rotAla = ampRot * sin(freqRot * c_time);
+
+
 
 void getResolution(void);
 void myData(void);							// De la practica 4
-void LoadTextures(void);					// De la pr�ctica 6
-unsigned int generateTextures(char*, bool, bool);	// De la pr�ctica 6
+void LoadTextures(void);					// De la pr ctica 6
+unsigned int generateTextures(char*, bool, bool);	// De la pr ctica 6
 
 //For Keyboard
 float	movX = 0.0f,
@@ -86,7 +114,8 @@ t_micro_r,
 t_cisco_b,
 t_cisco_f,
 t_cisco_l,
-t_cisco_r;
+t_cisco_r,
+pared_cisco;
 
 //Lighting
 glm::vec3 lightPosition(0.0f, 4.0f, -10.0f);
@@ -107,17 +136,17 @@ recorrido2 = false,
 recorrido3 = false,
 recorrido4 = false;
 
-//Keyframes (Manipulaci�n y dibujo)
+//Keyframes (Manipulaci n y dibujo)
 float	posX = 0.0f,
-		posY = 0.0f,
-		posZ = 0.0f,
-		rotRodIzq = 0.0f,
-		giroMonito = 0.0f;
+posY = 0.0f,
+posZ = 0.0f,
+rotRodIzq = 0.0f,
+giro_bici = 0.0f;
 float	incX = 0.0f,
-		incY = 0.0f,
-		incZ = 0.0f,
-		rotRodIzqInc = 0.0f,
-		giroMonitoInc = 0.0f;
+incY = 0.0f,
+incZ = 0.0f,
+rotRodIzqInc = 0.0f,
+giro_bici_inc = 0.0f;
 
 #define MAX_FRAMES 9
 int i_max_steps = 60;
@@ -129,18 +158,18 @@ typedef struct _frame
 	float posY;		//Variable para PosicionY
 	float posZ;		//Variable para PosicionZ
 	float rotRodIzq;
-	float giroMonito;
+	float giro_bici;
 
 }FRAME;
 
 FRAME KeyFrame[MAX_FRAMES];
-int FrameIndex = 0;			//introducir n�mero en caso de tener Key guardados
+int FrameIndex = 6;			//introducir n mero en caso de tener Key guardados
 bool play = false;
 int playIndex = 0;
 
 void saveFrame(void)
 {
-	//printf("frameindex %d\n", FrameIndex);
+	printf("frameindex %d\n", FrameIndex);
 	std::cout << "Frame Index = " << FrameIndex << std::endl;
 
 	KeyFrame[FrameIndex].posX = posX;
@@ -148,8 +177,12 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].posZ = posZ;
 
 	KeyFrame[FrameIndex].rotRodIzq = rotRodIzq;
-	KeyFrame[FrameIndex].giroMonito = giroMonito;
+	KeyFrame[FrameIndex].giro_bici = giro_bici;
 
+	printf("posX %f\n", posX);
+	printf("posX %f\n", posY);
+	printf("posX %f\n", posZ);
+	printf("posX %f\n", giro_bici);
 	FrameIndex++;
 }
 
@@ -160,7 +193,7 @@ void resetElements(void)
 	posZ = KeyFrame[0].posZ;
 
 	rotRodIzq = KeyFrame[0].rotRodIzq;
-	giroMonito = KeyFrame[0].giroMonito;
+	giro_bici = KeyFrame[0].giro_bici;
 }
 
 void interpolation(void)
@@ -170,7 +203,7 @@ void interpolation(void)
 	incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
 
 	rotRodIzqInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
-	giroMonitoInc = (KeyFrame[playIndex + 1].giroMonito - KeyFrame[playIndex].giroMonito) / i_max_steps;
+	giro_bici_inc = (KeyFrame[playIndex + 1].giro_bici - KeyFrame[playIndex].giro_bici) / i_max_steps;
 
 }
 
@@ -187,8 +220,8 @@ unsigned int generateTextures(const char* filename, bool alfa, bool isPrimitive)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	// load image, create texture and generate mipmaps
 	int width, height, nrChannels;
-	
-	if(isPrimitive)
+
+	if (isPrimitive)
 		stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
 	else
 		stbi_set_flip_vertically_on_load(false); // tell stb_image.h to flip loaded texture's on the y-axis.
@@ -224,6 +257,7 @@ void LoadTextures()
 	t_cisco_f = generateTextures("Texturas/cisco_f.jpg", 0, true);
 	t_cisco_l = generateTextures("Texturas/cisco_l.jpg", 0, true);
 	t_cisco_r = generateTextures("Texturas/cisco_r.jpg", 0, true);
+	pared_cisco = generateTextures("Texturas / cisco.png", 0, true);
 	t_grass = generateTextures("Texturas/grass.jpg", 0, true);
 	t_concrete = generateTextures("Texturas/concrete.jpg", 0, true);
 	//This must be the last
@@ -231,7 +265,7 @@ void LoadTextures()
 
 }
 
-void animate(void) 
+void animate(void)
 {
 	if (play)
 	{
@@ -260,13 +294,13 @@ void animate(void)
 			posZ += incZ;
 
 			rotRodIzq += rotRodIzqInc;
-			giroMonito += giroMonitoInc;
+			giro_bici += giro_bici_inc;
 
 			i_curr_steps++;
 		}
 	}
 
-	//Veh�culo
+	//Veh culo
 	if (animacion)
 	{
 		movAuto_x += 3.0f;
@@ -405,14 +439,8 @@ void myData() {
 int main() {
 
 	/******** irrKlang Code ************/
-	ISoundEngine* engine = createIrrKlangDevice();
-
-	if (!engine) {
-		printf("Error al crear el motor de sonido.\n");
-		return 1;
-	}
-
-	//engine->play2D("media/Metallica_All_Nightmare_Long.mp3", true);
+	loadPlaylist("media");
+	playNext();
 
 	/************************************/
 
@@ -455,7 +483,7 @@ int main() {
 	myData();
 	glEnable(GL_DEPTH_TEST);
 
-	
+
 
 	// build and compile shaders
 	// -------------------------
@@ -463,7 +491,7 @@ int main() {
 	Shader staticShader("Shaders/shader_Lights.vs", "Shaders/shader_Lights_mod.fs");	//To use with static models
 	Shader skyboxShader("Shaders/skybox.vs", "Shaders/skybox.fs");	//To use with skybox
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.fs");	//To use with animated models 
-	
+
 	vector<std::string> faces{
 		"resources/skybox/right_6.jpg",
 		"resources/skybox/left_6.jpg",
@@ -495,15 +523,27 @@ int main() {
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Alicia
 	// -------------------------------------------------------------------------------------------------------------------------
+	Model arbol("resources/objects/arbol/candytree.obj");
+	Model pajaro("resources/objects/pajaro/bird.dae");
+	Model raton("resources/objects/raton/mr721_09.dae");
+	Model extinguidor("resources/objects/extinguidor/ROBJ_Extinguisher.dae");
+	Model sol("resources/objects/sol/sol.obj");
+	Model estatua("resources/objects/estatua/estatua.obj");
+	Model ala_der("resources/objects/pajaro/ala_der.obj");
+	Model ala_izq("resources/objects/pajaro/ala_izq.obj");
+	Model cuerpo_paja("resources/objects/pajaro/cuerpo.obj");
+	Model bici("resources/objects/bici_lego/bici.obj");
+	Model llantas("resources/objects/bici_lego/llantas.obj");
+	Model soporte("resources/objects/camara/soporte.obj");
+	Model camara("resources/objects/camara/camara.obj");
 
-	//Inicializaci�n de KeyFrames
+	//Inicialización de KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = 0;
 		KeyFrame[i].posY = 0;
 		KeyFrame[i].posZ = 0;
-		KeyFrame[i].rotRodIzq = 0;
-		KeyFrame[i].giroMonito = 0;
+		KeyFrame[i].giro_bici = 0;
 	}
 
 
@@ -511,13 +551,19 @@ int main() {
 	glm::mat4 modelOp = glm::mat4(1.0f);		// initialize Matrix, Use this matrix for individual models
 	glm::mat4 viewOp = glm::mat4(1.0f);		//Use this matrix for ALL models
 	glm::mat4 projectionOp = glm::mat4(1.0f);	//This matrix is for Projection
+	glm::mat4 tempCuerpo = glm::mat4(1.0f);
+	glm::mat4 tempBici = glm::mat4(1.0f);
+	glm::mat4 tempCam = glm::mat4(1.0f);
 
 	// render loop
 	// -----------
 	while (!glfwWindowShouldClose(window))
 	{
 		skyboxShader.setInt("skybox", 0);
+		updateAudio();
 
+		contador_sol += 0.01;
+		contador_paja += 0.1;
 		// per-frame time logic
 		// --------------------
 		lastFrame = SDL_GetTicks();
@@ -787,6 +833,7 @@ int main() {
 			}
 
 			glDrawArrays(GL_TRIANGLES, 0, 36);
+
 		}
 
 		glBindVertexArray(VAO[0]);
@@ -835,7 +882,7 @@ int main() {
 
 		//Tener Piso como referencia
 		glBindVertexArray(VAO[2]);
-		//Colocar c�digo aqu�
+		//Colocar c digo aqu 
 		modelOp = glm::scale(glm::mat4(1.0f), glm::vec3(40.0f, 2.0f, 40.0f));
 		modelOp = glm::translate(modelOp, glm::vec3(0.0f, -1.0f, 0.0f));
 		modelOp = glm::rotate(modelOp, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
@@ -845,7 +892,7 @@ int main() {
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		glBindVertexArray(VAO[0]);
-		//Colocar c�digo aqu�
+		//Colocar c digo aqu 
 		/*modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 10.0f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 1.0f));
 		myShader.setMat4("model", modelOp);
@@ -881,6 +928,33 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		//piso.Draw(staticShader);
 
+		//árbol
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(60.0f, -13.0f, -150.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		arbol.Draw(staticShader);
+
+		//árbol
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-20.0f, -13.0f, -170.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		arbol.Draw(staticShader);
+
+		//árbol
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, -13.0f, -120.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		arbol.Draw(staticShader);
+
+		//árbol
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -13.0f, -100.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		arbol.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion y Estaticos Adolfo
@@ -893,8 +967,81 @@ int main() {
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion y Estaticos Alicia
 		// -------------------------------------------------------------------------------------------------------------------------
+		//sol
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-490.0f, 1000.0f, -310.0));
+		modelOp = glm::rotate(modelOp, contador_sol, glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		sol.Draw(staticShader);
 
+		//pájaro
+		// cuerpo
+		modelOp = glm::rotate(glm::mat4(1.0f), glm::radians(contador_paja), glm::vec3(0.0f, 1.0f, 0.0f));
+		tempCuerpo = modelOp = glm::translate(modelOp, glm::vec3(-300.0f, 500.0f, -200.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		cuerpo_paja.Draw(staticShader);
 
+		//ala_der
+		modelOp = glm::translate(tempCuerpo, glm::vec3(0.0f, 0.0f, 0.0));
+		modelOp = glm::rotate(modelOp, glm::radians((30 * sin(contador_paja))), glm::vec3(0.0f, 0.0f, 1.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		ala_der.Draw(staticShader);
+
+		//ala_izq
+		modelOp = glm::translate(tempCuerpo, glm::vec3(0.0f, 0.0f, 0.0));
+		modelOp = glm::rotate(modelOp, glm::radians(-(30 * sin(contador_paja))), glm::vec3(0.0f, 0.0f, 1.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		ala_izq.Draw(staticShader);
+
+		//bici
+		tempBici = modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-90.0f + posX, -1.5f, -150.0 + posZ));
+		modelOp = glm::rotate(modelOp, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::rotate(modelOp, glm::radians(giro_bici), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(3.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		bici.Draw(staticShader);
+
+		//llantas
+		modelOp = glm::translate(tempBici, glm::vec3(0.0f, 0.0f, 0.0));
+		modelOp = glm::rotate(modelOp, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::rotate(modelOp, glm::radians(giro_bici), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(3.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		llantas.Draw(staticShader);
+
+		//cámara 
+		//soporte
+		//modelOp = glm::rotate(glm::mat4(1.0f), glm::radians(contador_paja), glm::vec3(0.0f, 1.0f, 0.0f));
+		tempCam = modelOp = glm::translate(modelOp, glm::vec3(-18.0f, 54.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		soporte.Draw(staticShader);
+
+		//animación cámara 
+		//modelOp = glm::rotate(tempCam, glm::radians(contador_paja), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::translate(modelOp, glm::vec3(0.0f, 0.0f, 0.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		camara.Draw(staticShader);
+
+		//Para que el edificio tome las texturas del árbol
+		//árbol
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.0f, -13.0f, -70.0));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		arbol.Draw(staticShader);
 
 		//-------------------------------------------------------------------------------------
 		// draw skybox as last
@@ -909,7 +1056,7 @@ int main() {
 			SDL_Delay((int)(LOOP_TIME - deltaTime));
 		}
 
-		
+
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
 		glfwSwapBuffers(window);
@@ -927,7 +1074,7 @@ int main() {
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void my_input(GLFWwindow* window, int key, int scancode, int action, int mode) 
+void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
@@ -955,17 +1102,40 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
 		rotRodIzq++;
 	if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS)
-		giroMonito--;
+		giro_bici--;
 	if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
-		giroMonito++;
+		giro_bici++;
 	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
 		lightPosition.x++;
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
 		lightPosition.x--;
 
-	//Car animation
-	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-		animacion ^= true;
+	//Bici animation
+	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
+		for (int i = 0; i < MAX_FRAMES; i++)
+		{
+			KeyFrame[i].posY = 0;
+			KeyFrame[0].posX = 0;
+			KeyFrame[0].posZ = 0;
+			KeyFrame[0].giro_bici = 0;
+			KeyFrame[1].posX = 21;
+			KeyFrame[1].posZ = 0;
+			KeyFrame[1].giro_bici = 0;
+			KeyFrame[2].posX = 21;
+			KeyFrame[2].posZ = 0;
+			KeyFrame[2].giro_bici = -96;
+			KeyFrame[3].posX = 21;
+			KeyFrame[3].posZ = 51;
+			KeyFrame[3].giro_bici = -96;
+			KeyFrame[4].posX = 21;
+			KeyFrame[4].posZ = 51;
+			KeyFrame[4].giro_bici = -15;
+			KeyFrame[5].posX = 34;
+			KeyFrame[5].posZ = 51;
+			KeyFrame[5].giro_bici = -15;
+			FrameIndex = 6;
+		}
+	}
 
 	//To play KeyFrame animation 
 	if (key == GLFW_KEY_P && action == GLFW_PRESS)
@@ -997,6 +1167,11 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 		}
 	}
 
+	//Camera Positions
+	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) setCameraFrontView();
+	if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) setCameraLabView();
+	if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) setCameraCiscoView();
+	if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS) setCameraIsoView();
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
@@ -1007,7 +1182,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 }
 
 // glfw: whenever the mouse moves, this callback is called
-void mouse_callback(GLFWwindow* window, double xpos, double ypos) 
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
 	if (firstMouse)
 	{
@@ -1029,3 +1204,79 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
 	camera.ProcessMouseScroll(yoffset);
 }
+
+
+//Carga los archivos .ogg y .mp3 de la carpeta
+void loadPlaylist(const std::string& folderPath) {
+	try {
+		namespace fs = std::filesystem; // Using std::filesystem
+
+		// Check if directory exists
+		if (!fs::exists(folderPath)) {
+			std::cerr << "Error: Directory does not exist - " << folderPath << std::endl;
+			return;
+		}
+
+		for (const auto& entry : fs::directory_iterator(folderPath)) {
+			// Convert extension to lowercase for case-insensitive comparison
+			std::string ext = entry.path().extension().string();
+			std::transform(ext.begin(), ext.end(), ext.begin(),
+				[](unsigned char c) { return std::tolower(c); });
+
+			if (ext == ".ogg" || ext == ".mp3") {
+				playlist.push_back(entry.path().string());
+			}
+		}
+	}
+	catch (const std::filesystem::filesystem_error& e) {
+		std::cerr << "Filesystem error: " << e.what() << std::endl;
+	}
+	catch (...) {
+		std::cerr << "Unknown error occurred while loading playlist" << std::endl;
+	}
+}
+}
+
+//Reproduce el siguiente de la playlist
+void playNext() {
+	if (playlist.empty()) return;
+
+	//si hay uno sonando, lo paramos
+	if (currentSound && !currentSound->isFinished()) {
+		currentSound->stop();
+	}
+
+	//reproduce el siguiente
+	currentSound = engine->play2D(playlist[currentIndex].c_str(), false, false, true);
+
+	currentIndex = (currentIndex + 1) % playlist.size();
+}
+
+//Función para actualizar el audio
+void updateAudio() {
+	if (!currentSound || currentSound->isFinished()) {
+		playNext();
+	}
+}
+
+//posiciones de la cámara 
+void setCameraFrontView() {
+	camera.Position = glm::vec3(-10.0f, 7.0f, -100.0);
+	camera.Front = glm::normalize(glm::vec3(0.0f, 5.0f, 20.0f));
+}
+
+void setCameraLabView() {
+	camera.Position = glm::vec3(-118.0f, 10.0f, 150.0f);
+	camera.Front = glm::normalize(glm::vec3(5.0f, -2.0f, 0.0f));
+}
+
+void setCameraCiscoView() {
+	camera.Position = glm::vec3(3.0f, 1.5f, -3.0f);
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -2.0f, 0.0f));
+}
+
+void setCameraIsoView() {
+	camera.Position = glm::vec3(200.0f, 220.0f, -350.0f);
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
+}
+
