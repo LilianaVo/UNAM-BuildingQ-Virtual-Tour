@@ -42,3 +42,11 @@ This interactive graphics application allows virtual navigation through the 2nd 
   - Advanced texturing
   - Camera control systems
   - Complex animations
+
+## 📬 Contact
+For questions or collaborations, please contact team members through their UNAM email addresses.
+
+---
+
+*Developed as part of the Computer Graphics & HCI course at UNAM Engineering Faculty - 2025*
+*All models used in here are free of copyright*
