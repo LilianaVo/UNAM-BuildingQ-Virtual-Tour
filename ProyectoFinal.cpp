@@ -579,11 +579,26 @@ int main() {
 	Model Cristal2("resources/objects/Crystal2/Crystal2.obj"); //32 
 	Model Cristal3("resources/objects/Crystal3/Crystal3.obj"); //33 
 
-		//Decoracion de salon
+	//Decoracion de salon
 
 	Model Mesa1("resources/objects/Table1/Table1.obj"); //34
-	Model Silla1("resources/objects/Chair1/Chair1.obj"); //35
-	Model Silla2("resources/objects/Chair2/Chair2.obj"); //36
+	Model Mesa2("resources/objects/Table2/Table2.obj"); //35
+	Model Silla1("resources/objects/Chair1/Chair1.obj"); //36
+	Model Silla2("resources/objects/Chair2/Chair2.obj"); //37
+	Model Pizaron1("resources/objects/Board/Board1.obj"); //38
+	Model Closet1("resources/objects/Closet1/Closet1.obj"); //39
+
+
+	//Equipos de computo
+
+	Model GabineteCpu1("resources/objects/CPU_Gabinet/Gabinet1.obj"); //40
+	Model GabineteCpu2("resources/objects/CPU_Gabinet2/CPU2.obj"); //41
+	Model Monitor1("resources/objects/LCD/LCD1.obj"); //42
+	Model Monitor2("resources/objects/LCD2/LCD2.obj"); //43
+	Model Tecleado1("resources/objects/Keyboard/Keyboard1.obj"); //44
+	Model Tecleado2("resources/objects/Keyboard2/Keyboard2.obj"); //45
+	Model Mouse1("resources/objects/Mouse/Mouse1.obj"); //46
+	Model Mouse2("resources/objects/Mouse2/Mouse2.obj"); //47
 
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Alicia
