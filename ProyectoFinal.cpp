@@ -579,6 +579,12 @@ int main() {
 	Model Cristal2("resources/objects/Crystal2/Crystal2.obj"); //32 
 	Model Cristal3("resources/objects/Crystal3/Crystal3.obj"); //33 
 
+		//Decoracion de salon
+
+	Model Mesa1("resources/objects/Table1/Table1.obj"); //34
+	Model Silla1("resources/objects/Chair1/Chair1.obj"); //35
+	Model Silla2("resources/objects/Chair2/Chair2.obj"); //36
+
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Alicia
 	// -------------------------------------------------------------------------------------------------------------------------
@@ -1954,6 +1960,136 @@ int main() {
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
 		Puerta2.Draw(staticShader);
+
+				//MODELOS Y DECORACIÓN DEL SALON
+
+		//Derecha Mesas
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 55.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Silla2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-22.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-38.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-26.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-14.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-22.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-38.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-26.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-14.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+
+		// Izquierda Mesas
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(20.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(43.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(38.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(26.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, -1.9f, 45.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(20.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(43.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(20.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(43.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
+		staticShader.setMat4("model", modelOp);
+		Mesa1.Draw(staticShader);
+
+
+
 
 
 
