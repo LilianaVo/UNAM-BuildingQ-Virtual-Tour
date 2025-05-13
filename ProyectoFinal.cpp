@@ -1,4 +1,4 @@
-/*---------------------------------------------------------*/
+﻿/*---------------------------------------------------------*/
 /* ----------------   Proyecto Final   --------------------*/
 /*-----------------       2025-2       --------------------*/
 /*------------- Alumno: Adolfo Rom n Jim nez --------------*/
@@ -51,6 +51,8 @@ void setCameraFrontView();
 void setCameraLabView();
 void setCameraCiscoView();
 void setCameraIsoView();
+void setCameraBiciAnimation();
+void setCameraAnimation();
 
 //sonido
 namespace fs = std::filesystem;
@@ -68,7 +70,7 @@ GLuint VBO[3], VAO[3], EBO[3];
 
 //Camera
 Camera camera(glm::vec3(-10.0f, 7.0f, -100.0));
-float MovementSpeed = 0.1f;
+float MovementSpeed = 0.98f;
 GLfloat lastX = SCR_WIDTH / 2.0f,
 lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -81,12 +83,6 @@ lastFrame = 0.0f;
 float contador_sol, contador_paja;
 float angulo_ala = sin((contador_paja) * 30.0f);
 float c_time = glfwGetTime();
-
-float ampRot = 30.0f;
-float freqRot = 2.0f;
-float rotAla = ampRot * sin(freqRot * c_time);
-
-
 
 void getResolution(void);
 void myData(void);							// De la practica 4
@@ -167,6 +163,12 @@ int FrameIndex = 6;			//introducir n mero en caso de tener Key guardados
 bool play = false;
 int playIndex = 0;
 
+
+bool animarCamara = false;
+float velocidadRotacion = 0.5f;
+float maxNegar = 7.0f;
+bool girandoDerecha = true;
+float anguloNegar = 7.0f;
 void saveFrame(void)
 {
 	printf("frameindex %d\n", FrameIndex);
@@ -305,6 +307,25 @@ void animate(void)
 	{
 		movAuto_x += 3.0f;
 	}
+
+	//camara
+	if (animarCamara) {
+		if (girandoDerecha) {
+			anguloNegar += velocidadRotacion;
+			if (anguloNegar >= maxNegar) {
+				girandoDerecha = false;
+			}
+		}
+		else {
+			anguloNegar -= velocidadRotacion;
+			if (anguloNegar <= -maxNegar) {
+				girandoDerecha = true;
+				// Si quieres que se detenga tras una vez:
+				// animarCamara = false;
+			}
+		}
+	}
+
 }
 
 void getResolution() {
@@ -558,13 +579,14 @@ int main() {
 	Model Cristal2("resources/objects/Crystal2/Crystal2.obj"); //32 
 	Model Cristal3("resources/objects/Crystal3/Crystal3.obj"); //33 
 
-
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Alicia
 	// -------------------------------------------------------------------------------------------------------------------------
+	Model arbol("resources/objects/arbol/candytree.obj");
 	Model pajaro("resources/objects/pajaro/bird.dae");
+	Model raton("resources/objects/raton/mr721_09.dae");
+	Model extinguidor("resources/objects/extinguidor/ROBJ_Extinguisher.dae");
 	Model sol("resources/objects/sol/sol.obj");
-	Model estatua("resources/objects/estatua/estatua.obj");
 	Model ala_der("resources/objects/pajaro/ala_der.obj");
 	Model ala_izq("resources/objects/pajaro/ala_izq.obj");
 	Model cuerpo_paja("resources/objects/pajaro/cuerpo.obj");
@@ -598,8 +620,8 @@ int main() {
 		skyboxShader.setInt("skybox", 0);
 		updateAudio();
 
-		contador_sol += 0.01;
-		contador_paja += 0.1;
+		contador_sol += 0.05;
+		contador_paja += 0.4;
 		// per-frame time logic
 		// --------------------
 		lastFrame = SDL_GetTicks();
@@ -964,15 +986,8 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		//piso.Draw(staticShader);
 
-		// -------------------------------------------------------------------------------------------------------------------------
-		// Personaje Animacion y Estaticos Adolfo
-		// -------------------------------------------------------------------------------------------------------------------------
 
-		// -------------------------------------------------------------------------------------------------------------------------
-		// Personaje Animacion y Estaticos Ileana
-		// -------------------------------------------------------------------------------------------------------------------------
-
-		//Estaticos, Decoración: Parte izquierda del edificio
+				//Estaticos, Decoración: Parte izquierda del edificio
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -50.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
@@ -1381,7 +1396,7 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Banco4.Draw(staticShader);
 
-				//Edificios
+		//Edificios
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, -190.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.07f));
@@ -1522,7 +1537,7 @@ int main() {
 		modelOp = glm::scale(modelOp, glm::vec3(0.09f));
 		staticShader.setMat4("model", modelOp);
 		Suelo2.Draw(staticShader);
-		
+
 		//Relleno de espacios ventanas FRENTE
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-10.0f, -1.9f, 0.0f));
@@ -1999,28 +2014,19 @@ int main() {
 
 		//cámara 
 		//soporte
-		//modelOp = glm::rotate(glm::mat4(1.0f), glm::radians(contador_paja), glm::vec3(0.0f, 1.0f, 0.0f));
-		tempCam = modelOp = glm::translate(modelOp, glm::vec3(-18.0f, 54.0f, 0.0f));
+		tempCam = modelOp = glm::translate(modelOp, glm::vec3(-50.0f, 26.0f, 60.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
 		staticShader.setMat4("model", modelOp);
 		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		soporte.Draw(staticShader);
 
 		//animación cámara 
-		//modelOp = glm::rotate(tempCam, glm::radians(contador_paja), glm::vec3(0.0f, 1.0f, 0.0f));
-		modelOp = glm::translate(modelOp, glm::vec3(0.0f, 0.0f, 0.0));
+		modelOp = glm::translate(tempCam, glm::vec3(0.0f, 0.0f, 0.0f)); 
+		modelOp = glm::rotate(modelOp, glm::radians(anguloNegar), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
 		staticShader.setMat4("model", modelOp);
 		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		camara.Draw(staticShader);
-
-		//Para que el edificio tome las texturas del árbol
-		//árbol
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(30.0f, -13.0f, -70.0));
-		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
-		staticShader.setMat4("model", modelOp);
-		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
-		arbol.Draw(staticShader);
 
 		//-------------------------------------------------------------------------------------
 		// draw skybox as last
@@ -2137,6 +2143,13 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 		}
 	}
 
+	//camara
+	if (key == GLFW_KEY_C && action == GLFW_PRESS) {
+		animarCamara = !animarCamara; // alterna entre true y false
+		std::cout << "Animación de cámara: " << (animarCamara ? "Activada" : "Desactivada") << std::endl;
+	}
+
+
 	//To Save a KeyFrame
 	if (key == GLFW_KEY_L && action == GLFW_PRESS)
 	{
@@ -2151,6 +2164,8 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 	if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) setCameraLabView();
 	if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) setCameraCiscoView();
 	if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS) setCameraIsoView();
+	if (glfwGetKey(window, GLFW_KEY_5) == GLFW_PRESS) setCameraBiciAnimation();
+	if (glfwGetKey(window, GLFW_KEY_6) == GLFW_PRESS) setCameraAnimation();
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
@@ -2234,6 +2249,16 @@ void setCameraCiscoView() {
 
 void setCameraIsoView() {
 	camera.Position = glm::vec3(200.0f, 220.0f, -350.0f);
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
+}
+
+void setCameraBiciAnimation() {
+	camera.Position = glm::vec3(-100.0f, 13.0f, -120.0);
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
+}
+
+void setCameraAnimation() {
+	camera.Position = glm::vec3(60.0f, 85.0f, -100.0f);
 	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
 }
 
