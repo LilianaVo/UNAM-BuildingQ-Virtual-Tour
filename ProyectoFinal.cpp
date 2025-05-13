@@ -70,7 +70,7 @@ GLuint VBO[3], VAO[3], EBO[3];
 
 //Camera
 Camera camera(glm::vec3(-10.0f, 7.0f, -100.0));
-float MovementSpeed = 0.98f;
+float MovementSpeed = 0.8f;
 GLfloat lastX = SCR_WIDTH / 2.0f,
 lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -2374,7 +2374,7 @@ void setCameraFrontView() {
 }
 
 void setCameraLabView() {
-	camera.Position = glm::vec3(-118.0f, 10.0f, 150.0f);
+	camera.Position = glm::vec3(43.0f, 10.0f, 50.0f);
 	camera.Front = glm::normalize(glm::vec3(5.0f, -2.0f, 0.0f));
 }
 
