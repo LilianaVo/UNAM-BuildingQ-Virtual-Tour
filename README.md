@@ -1,8 +1,5 @@
 # Virtual Tour of UNAM's Engineering Faculty Building Q - 2nd Floor
 
-![UNAM Logo](https://www.unam.mx/sites/all/themes/unam/logo.png)  
-*(Consider adding a project banner image here)*
-
 ## 📌 Project Overview
 
 **Course:** Computer Graphics & Human-Computer Interaction (2025-02 Semester)  
@@ -10,9 +7,9 @@
 **Teaching Assistant:** González Nava Alicia Aislinn  
 
 ### 👥 Team Members
-- Román Jiménez Adolfo (317251357)
-- Lee Obando Ileana Verónica (410098363)
-- [Your Name] (318118408)
+- Román Jiménez Adolfo (410098363)
+- Lee Obando Ileana Verónica (318118408)
+- González Nava Alicia Aislinn (317251357)
 
 **Lab Group:** 10  
 **Theory Group:** 03
@@ -45,5 +42,3 @@ This interactive graphics application allows virtual navigation through the 2nd 
   - Advanced texturing
   - Camera control systems
   - Complex animations
-
-## 📂 Repository Structure
