@@ -579,11 +579,26 @@ int main() {
 	Model Cristal2("resources/objects/Crystal2/Crystal2.obj"); //32 
 	Model Cristal3("resources/objects/Crystal3/Crystal3.obj"); //33 
 
-		//Decoracion de salon
+	//Decoracion de salon
 
 	Model Mesa1("resources/objects/Table1/Table1.obj"); //34
-	Model Silla1("resources/objects/Chair1/Chair1.obj"); //35
-	Model Silla2("resources/objects/Chair2/Chair2.obj"); //36
+	Model Mesa2("resources/objects/Table2/Table2.obj"); //35
+	Model Silla1("resources/objects/Chair1/Chair1.obj"); //36
+	Model Silla2("resources/objects/Chair2/Chair2.obj"); //37
+	Model Pizaron1("resources/objects/Board/Board1.obj"); //38
+	Model Closet1("resources/objects/Closet1/Closet1.obj"); //39
+
+
+	//Equipos de computo
+
+	Model GabineteCpu1("resources/objects/CPU_Gabinet/Gabinet1.obj"); //40
+	Model GabineteCpu2("resources/objects/CPU_Gabinet2/CPU2.obj"); //41
+	Model Monitor1("resources/objects/LCD/LCD1.obj"); //42
+	Model Monitor2("resources/objects/LCD2/LCD2.obj"); //43
+	Model Tecleado1("resources/objects/Keyboard/Keyboard1.obj"); //44
+	Model Tecleado2("resources/objects/Keyboard2/Keyboard2.obj"); //45
+	Model Mouse1("resources/objects/Mouse/Mouse1.obj"); //46
+	Model Mouse2("resources/objects/Mouse2/Mouse2.obj"); //47
 
 	// -------------------------------------------------------------------------------------------------------------------------
 	// Modelos Alicia
@@ -1961,7 +1976,7 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Puerta2.Draw(staticShader);
 
-				//MODELOS Y DECORACIÓN DEL SALON
+						//MODELOS Y DECORACIÓN DEL SALON
 
 		//Derecha Mesas
 
@@ -1970,32 +1985,32 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Silla2.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 45.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 52.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
-		Mesa1.Draw(staticShader);
+		Mesa2.Draw(staticShader);
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 27.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-22.0f, -1.9f, 27.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-20.0f, -1.9f, 27.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, 27.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-44.5f, -1.9f, 27.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-38.0f, -1.9f, 27.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-34.5f, -1.9f, 27.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-26.0f, -1.9f, 27.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-24.5f, -1.9f, 27.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
@@ -2010,22 +2025,22 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-22.0f, -1.9f, 9.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-20.0f, -1.9f, 9.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -1.9f, 9.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-44.5f, -1.9f, 9.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-38.0f, -1.9f, 9.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-34.5f, -1.9f, 9.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-26.0f, -1.9f, 9.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-24.5f, -1.9f, 9.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
@@ -2034,6 +2049,172 @@ int main() {
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
+
+		//Equipos derecha
+
+		//MESA 1
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-49.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-39.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-29.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-19.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-44.5f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-33.5f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-23.5f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-14.0f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-44.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-33.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-23.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-14.0f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+		
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-47.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-36.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-26.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-17.0f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		//MESA 2
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-49.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-39.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-29.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-19.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-44.5f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-33.5f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-23.5f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-14.0f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-44.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-33.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-23.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-14.0f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-47.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-36.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-26.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-17.0f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
 
 
 		// Izquierda Mesas
@@ -2048,17 +2229,17 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, 45.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, -1.9f, 45.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(38.0f, -1.9f, 45.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(34.5f, -1.9f, 45.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(26.0f, -1.9f, 45.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(24.5f, -1.9f, 45.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
 		staticShader.setMat4("model", modelOp);
 		Silla1.Draw(staticShader);
@@ -2078,6 +2259,26 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(34.5f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(24.5f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, -1.9f, 27.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(20.0f, -1.9f, 9.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
@@ -2087,6 +2288,325 @@ int main() {
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
 		staticShader.setMat4("model", modelOp);
 		Mesa1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(34.5f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(24.5f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, -1.9f, 9.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.50f));
+		staticShader.setMat4("model", modelOp);
+		Silla1.Draw(staticShader);
+
+		// Equipos izquierda
+
+		//MESA 1
+		
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(49.0f, 7.9f, 51.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(39.0f, 7.9f, 51.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(29.0f, 7.9f, 51.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(19.0f, 7.9f, 51.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, 7.9f, 52.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.5f, 7.9f, 52.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(23.5f, 7.9f, 52.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, 7.9f, 52.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.5f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(23.5f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(41.5f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(31.0f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(21.0f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(11.0f, 7.9f, 50.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+
+		//MESA 2
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(49.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(39.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(29.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(19.0f, 7.9f, 33.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.5f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(23.5f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, 7.9f, 34.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(23.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(41.5f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(31.0f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(21.0f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(11.0f, 7.9f, 32.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		//MESA 3
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(49.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(39.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(29.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(19.0f, 7.9f, 15.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.5f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(23.5f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, 7.9f, 16.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Monitor1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(44.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(33.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(23.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(41.5f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(31.0f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(21.0f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(11.0f, 7.9f, 14.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
+		staticShader.setMat4("model", modelOp);
+		Mouse1.Draw(staticShader);
+
+
+		//Decoración adicional
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-5.0f, 4.0f, 63.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(2.50f));
+		staticShader.setMat4("model", modelOp);
+		Pizaron1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(14.0f, -1.9f, 49.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Closet1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(26.0f, -1.9f, 49.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Closet1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(38.0f, -1.9f, 49.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Closet1.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, 49.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.10f));
+		staticShader.setMat4("model", modelOp);
+		Closet1.Draw(staticShader);
+
+		//Escritorio profesor
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-49.0f, 7.9f, 51.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		GabineteCpu2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-39.5f, 7.9f, 49.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Monitor2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-39.5f, 7.9f, 53.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Tecleado2.Draw(staticShader);
+
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-32.5f, 7.9f, 53.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
+		staticShader.setMat4("model", modelOp);
+		Mouse2.Draw(staticShader);
 
 
 
