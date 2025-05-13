@@ -4,7 +4,6 @@
 
 **Course:** Computer Graphics & Human-Computer Interaction (2025-02 Semester)  
 **Professor:** Ing. Luis Sergio Valencia Castro  
-**Teaching Assistant:** González Nava Alicia Aislinn  
 
 ### 👥 Team Members
 - Román Jiménez Adolfo (410098363)
