@@ -1,5 +1,7 @@
 # Virtual Tour of UNAM's Engineering Faculty Building Q - 2nd Floor
 
+Clone and unzip the .rar file in order to execute the program.
+
 ## 📌 Project Overview
 
 **Course:** Computer Graphics & Human-Computer Interaction (2025-02 Semester)  

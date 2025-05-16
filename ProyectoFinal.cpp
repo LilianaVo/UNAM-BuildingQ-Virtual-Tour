@@ -137,11 +137,13 @@ float	posX = 0.0f,
 posY = 0.0f,
 posZ = 0.0f,
 rotRodIzq = 0.0f,
+rotRodDer = 0.0f,
 giro_bici = 0.0f;
 float	incX = 0.0f,
 incY = 0.0f,
 incZ = 0.0f,
 rotRodIzqInc = 0.0f,
+rotRodDerInc = 0.0f,
 giro_bici_inc = 0.0f;
 
 #define MAX_FRAMES 9
@@ -154,6 +156,7 @@ typedef struct _frame
 	float posY;		//Variable para PosicionY
 	float posZ;		//Variable para PosicionZ
 	float rotRodIzq;
+	float rotRodDer;
 	float giro_bici;
 
 }FRAME;
@@ -179,12 +182,15 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].posZ = posZ;
 
 	KeyFrame[FrameIndex].rotRodIzq = rotRodIzq;
+	KeyFrame[FrameIndex].rotRodDer = rotRodDer;
 	KeyFrame[FrameIndex].giro_bici = giro_bici;
 
 	printf("posX %f\n", posX);
-	printf("posX %f\n", posY);
-	printf("posX %f\n", posZ);
-	printf("posX %f\n", giro_bici);
+	printf("posY %f\n", posY);
+	printf("posZ %f\n", posZ);
+	printf("posrotrodizq %f\n", rotRodIzq);
+	printf("posrotrodder %f\n", rotRodDer);
+
 	FrameIndex++;
 }
 
@@ -195,6 +201,7 @@ void resetElements(void)
 	posZ = KeyFrame[0].posZ;
 
 	rotRodIzq = KeyFrame[0].rotRodIzq;
+	rotRodDer = KeyFrame[0].rotRodDer;
 	giro_bici = KeyFrame[0].giro_bici;
 }
 
@@ -205,6 +212,7 @@ void interpolation(void)
 	incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
 
 	rotRodIzqInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
+	rotRodDerInc = (KeyFrame[playIndex + 1].rotRodDer - KeyFrame[playIndex].rotRodDer) / i_max_steps;
 	giro_bici_inc = (KeyFrame[playIndex + 1].giro_bici - KeyFrame[playIndex].giro_bici) / i_max_steps;
 
 }
@@ -296,6 +304,7 @@ void animate(void)
 			posZ += incZ;
 
 			rotRodIzq += rotRodIzqInc;
+			rotRodDer += rotRodDerInc;
 			giro_bici += giro_bici_inc;
 
 			i_curr_steps++;
@@ -615,6 +624,15 @@ int main() {
 	Model llantas("resources/objects/bici_lego/llantas.obj");
 	Model soporte("resources/objects/camara/soporte.obj");
 	Model camara("resources/objects/camara/camara.obj");
+	Model body("resources/objects/perro/torso.obj");
+	Model neck("resources/objects/perro/neck.obj");
+	Model head("resources/objects/perro/cabeza.obj");
+	Model tail("resources/objects/perro/cola.obj");
+	Model left_front("resources/objects/perro/left_front_leg.obj");
+	Model left_back("resources/objects/perro/left_back_leg.obj");
+	Model right_front("resources/objects/perro/right_front_leg.obj");
+	Model right_back("resources/objects/perro/right_back_leg.obj");
+
 
 	//Inicialización de KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -633,6 +651,8 @@ int main() {
 	glm::mat4 tempCuerpo = glm::mat4(1.0f);
 	glm::mat4 tempBici = glm::mat4(1.0f);
 	glm::mat4 tempCam = glm::mat4(1.0f);
+	glm::mat4 tempDog = glm::mat4(1.0f);
+
 
 	// render loop
 	// -----------
@@ -1008,8 +1028,8 @@ int main() {
 		//piso.Draw(staticShader);
 
 
-				//Estaticos, Decoración: Parte izquierda del edificio
-
+		//Estaticos, Decoración: Parte izquierda del edificio
+		
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(40.0f, -1.9f, -50.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
 		staticShader.setMat4("model", modelOp);
@@ -1976,9 +1996,9 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Puerta2.Draw(staticShader);
 
-						//MODELOS Y DECORACIÓN DEL SALON
+		//MODELOS Y DECORACIÓN DEL SALON
 
-		//Derecha Mesas
+//Derecha Mesas
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-40.0f, -1.9f, 55.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.13f));
@@ -2113,7 +2133,7 @@ int main() {
 		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
 		staticShader.setMat4("model", modelOp);
 		Tecleado1.Draw(staticShader);
-		
+
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-47.5f, 7.9f, 32.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
 		staticShader.setMat4("model", modelOp);
@@ -2312,7 +2332,7 @@ int main() {
 		// Equipos izquierda
 
 		//MESA 1
-		
+
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(49.0f, 7.9f, 51.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.08f));
 		staticShader.setMat4("model", modelOp);
@@ -2607,16 +2627,12 @@ int main() {
 		modelOp = glm::scale(modelOp, glm::vec3(0.15f));
 		staticShader.setMat4("model", modelOp);
 		Mouse2.Draw(staticShader);
-
-
-
-
-
-
+		
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion y Estaticos Alicia
 		// -------------------------------------------------------------------------------------------------------------------------
+
 		//sol
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-490.0f, 1000.0f, -310.0));
 		modelOp = glm::rotate(modelOp, contador_sol, glm::vec3(0.0f, 1.0f, 0.0f));
@@ -2650,6 +2666,7 @@ int main() {
 		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		ala_izq.Draw(staticShader);
 
+
 		//bici
 		tempBici = modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-90.0f + posX, -1.5f, -150.0 + posZ));
 		modelOp = glm::rotate(modelOp, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -2677,12 +2694,69 @@ int main() {
 		soporte.Draw(staticShader);
 
 		//animación cámara 
-		modelOp = glm::translate(tempCam, glm::vec3(0.0f, 0.0f, 0.0f)); 
-		modelOp = glm::rotate(modelOp, glm::radians(anguloNegar), glm::vec3(0.0f, 1.0f, 0.0f)); 
+		modelOp = glm::translate(tempCam, glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::rotate(modelOp, glm::radians(anguloNegar), glm::vec3(0.0f, 1.0f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
 		staticShader.setMat4("model", modelOp);
 		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		camara.Draw(staticShader);
+
+		//perro
+		//cuerpo
+		tempDog = modelOp = glm::translate(modelOp, glm::vec3(-65.0f, -38.0f, -75.0f));
+		modelOp = glm::rotate(tempDog, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::rotate(modelOp, glm::radians(giro_bici), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		body.Draw(staticShader);
+
+		//cuello
+		modelOp = glm::translate(tempDog, glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::rotate(tempDog, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		neck.Draw(staticShader);
+
+		//cabeza
+		modelOp = glm::translate(tempDog, glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::rotate(tempDog, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		head.Draw(staticShader);
+
+		//cola
+		modelOp = glm::translate(tempDog, glm::vec3(0.0f, 0.0f, 0.0f));
+		//modelOp = glm::rotate(modelOp, glm::radians(anguloNegar), glm::vec3(0.0f, 1.0f, 0.0f));
+		//modelOp = glm::rotate(tempDog, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//float angle = sin(glfwGetTime() * 5.0f) * 10.0f; 
+		//modelOp = glm::rotate(modelOp, glm::radians(angle), glm::vec3(1.0f, 0.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		tail.Draw(staticShader);
+
+		//pata delantera derecha
+		modelOp = glm::translate(tempDog, glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::rotate(tempDog, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::rotate(modelOp, glm::radians(rotRodDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		right_front.Draw(staticShader);
+
+		//pata delantera izquierda
+		modelOp = glm::translate(tempDog, glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::rotate(tempDog, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::rotate(modelOp, glm::radians(rotRodIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		modelOp = glm::scale(modelOp, glm::vec3(1.0f));
+		staticShader.setMat4("model", modelOp);
+		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		left_front.Draw(staticShader);
+
+
 
 		//-------------------------------------------------------------------------------------
 		// draw skybox as last
@@ -2742,6 +2816,10 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 		rotRodIzq--;
 	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
 		rotRodIzq++;
+	if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS)
+		rotRodDer--;
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		rotRodDer++;
 	if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS)
 		giro_bici--;
 	if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
@@ -2899,22 +2977,21 @@ void setCameraLabView() {
 }
 
 void setCameraCiscoView() {
-	camera.Position = glm::vec3(3.0f, 1.5f, -3.0f);
-	camera.Front = glm::normalize(glm::vec3(-5.0f, -2.0f, 0.0f));
+	camera.Position = glm::vec3(-80.0f, 10.0f, 100.0f);
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -1.0f, 12.0f));
 }
 
 void setCameraIsoView() {
-	camera.Position = glm::vec3(200.0f, 220.0f, -350.0f);
-	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
+	camera.Position = glm::vec3(220.0f, 220.0f, -370.0f);
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -5.0f, 7.0f));
 }
 
 void setCameraBiciAnimation() {
-	camera.Position = glm::vec3(-100.0f, 13.0f, -120.0);
-	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
+	camera.Position = glm::vec3(-120.0f, 10.0f, -120.0);
+	camera.Front = glm::normalize(glm::vec3(2.0f, -0.75f, -0.4f));
 }
 
 void setCameraAnimation() {
 	camera.Position = glm::vec3(60.0f, 85.0f, -100.0f);
-	camera.Front = glm::normalize(glm::vec3(-5.0f, -7.0f, 10.0f));
+	camera.Front = glm::normalize(glm::vec3(-5.0f, -0.8f, 14.0f));
 }
-
