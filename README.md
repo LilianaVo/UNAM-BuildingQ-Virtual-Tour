@@ -60,11 +60,11 @@ The engine was built using **C++** and the **OpenGL** graphics library, implemen
 
 This project was a collaborative effort by the following engineering students:
 
-| Student Name | Student ID (No. Cuenta) | Role |
-| :--- | :--- | :--- |
-| **González Nava Alicia Aislinn** | 317251357 | 3D Modeling & Texturing |
-| **Román Jiménez Adolfo** | 410098363 | Core Engine & Physics |
-| **Lee Obando Ileana Verónica** | 318118408 | Lighting & Scene Assembly |
+| Student Name | Role |
+| :--- | :--- |
+| **González Nava Alicia Aislinn** | 3D Modeling & Texturing |
+| **Román Jiménez Adolfo** | Core Engine & Physics |
+| **Lee Obando Ileana Verónica** | Lighting & Scene Assembly |
 
 ---
 
