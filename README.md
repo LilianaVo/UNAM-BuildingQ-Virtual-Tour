@@ -29,15 +29,15 @@ The system demonstrates advanced computer graphics concepts, including hierarchi
 
 ---
 
-## 🎓 Academic Context
+## Academic Context
 
 This project was developed as the Final Capstone for the **Computer Graphics & HCI** course at **UNAM**.
 
 | **Course Information** | **Details** |
 | :--- | :--- |
 | **University** | Universidad Nacional Autónoma de México (UNAM) |
-| **Faculty** | **Facultad de Ingeniería (FI)** |
-| **Course** | Computación Gráfica e Interacción Humano-Computadora |
+| **Faculty** | **Faculty of Wngineering** |
+| **Course** | Computer Graphics and Human-Computer Interaction |
 | **Professor** | **Ing. Luis Sergio Valencia Castro** |
 | **Semester** | 2025-02 |
 | **Groups** | Theory: **03** | Lab: **10** |
@@ -56,7 +56,7 @@ The engine was built using **C++** and the **OpenGL** graphics library, implemen
 
 ---
 
-## 👥 Development Team
+## Development Team
 
 This project was a collaborative effort by the following engineering students:
 
